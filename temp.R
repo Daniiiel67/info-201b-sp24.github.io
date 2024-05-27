@@ -1,0 +1,5 @@
+dat1 <- read.csv("us-prison-pop.txt")
+dat2 <- read.csv("us-jail-pop.txt")
+dat3 <- read.csv("us-prison-jail-rates.txt")
+dat4 <- read.csv("us-prison-jail-rates-1990.txt")
+dat5 <- read.csv("us-prison-jail-rates-1990-WA.txt")

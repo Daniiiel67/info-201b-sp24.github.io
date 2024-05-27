@@ -1,0 +1,50 @@
+---
+title: "A3: Incarceration"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, echo = FALSE)
+library(tidyverse)
+library(knitr)
+```
+
+### Introduction
+
+The United States has the largest number of incarcerated people in the world. This report uses incarceration data collected by the Vera Institute to analyze the impact of different races and geographical locations on the incarcerated people rate. The variables selected in this report are year, total Jail Pop Rate, and Jail Pop Rate of different races. The influence of race on Jail Pop Rate was analyzed without adding different races, and the influence of different regions on Jail Pop Rate was analyzed visually.
+
+### Summary Information
+
+The data I chose was Smaller dataset about prison/jail population per 100,000 people (rate) per county/state starting at 1990, The dataset has 91301 observations and 23 variables. Through descriptive statistics of the data set, I found that the average of total jail rates for all counties was 446.6666, the maximum total jail rate for all counties is 51021.8600, the minimum total jail rate for all counties is 0.0000, the change in the total population from 1990 to 2008 is 24,712.5119, the change in the total jail rate from 1990 to 2008. It is 390.4818.
+
+```{r}
+source("summary.R")
+kable(df)
+```
+
+
+### The Dataset
+
+The data for this assignment comes from the Vera Institute, I can download full or partial data sets on github. The data set was collected by two centers: the Census of Jails (COJ), which covers all jails and is conducted every five to eight years since 1970,  and the Annual Survey of Jails (ASJ),  which covers about one-third of jails-and includes nearly all of the largest jails-that has been conducted in non-census  years since 1982. This project was funded by the Robert W. Wilson Charitable Trust.  We used a Smaller dataset about prison/jail population per 100,000 people (rate) per county/state starting at 1990, The dataset has a total of 91,031 observations and 23 variables. ethical questions of some criminals are very sensitive. This dataset only simplifies ethical questions, but it is not very accurate. Because the dataset is from 1990 to 2018, the dataset is not up to date.
+
+
+### Trends Over Time Chart
+
+The chart compares the average incarceration rate of different ethnicity over time. From the chart, we can see that the incarceration rate of black ethnicity is the highest in any given year. However, the incarceration rate of black ethnicity first increased significantly over time, and then began to decline rapidly from 1998. For the other four ethnicity, the average incarceration rate increased slowly over time and did not change significantly.
+
+``````{r, echo = FALSE, code = readLines("chart1.R")}
+```
+
+### Variable Comparison Chart
+
+The graph compares prison and jail populations of different races in 1990, and it can be seen from the graph that the Jail population is larger than the prison population regardless of race, which is understandable because only jails that are determined to commit crimes go to prison. In addition, we found that black people are the largest population in both prison and jail populations, indicating that black people are the main ethnic group in prison and jail.
+
+``````{r, echo = FALSE, code = readLines("chart2.R")}
+```
+
+### Map
+
+The following figure shows the Jail Pop Rate of different states in 2018. The red area represents the high Jail Pop Rate, while the black area represents the low Jail Pop Rate. As can be seen from the figure and the map, The Jail Pop Rate is higher in the South than in the North, with louisiana, utah and new mexico having the highest Jail Pop Rate.
+
+``````{r, echo = FALSE, code = readLines("map.R")}
+```
